@@ -13,6 +13,11 @@ topics:
   - SSH
 shortTitle: Permission denied (publickey)
 ---
+{% ifversion ghec %}
+
+> [!NOTE] {% data reusables.enterprise-data-residency.access-domain %}
+
+{% endif %}
 
 ## Should the `sudo` command or elevated privileges be used with Git?
 
@@ -24,18 +29,18 @@ If you have a _very good reason_ you must use `sudo`, then ensure you are using 
 
 To make sure you are connecting to the right domain, you can enter the following command:
 
-```shell replacedomain copy
-ssh -vT git@{% data variables.command_line.codeblock %}
+```shell copy
+ssh -vT git@{% data variables.product.product_url %}
 ```
 
 You should see this output:
 
-```shell replacedomain
+```shell
 > OpenSSH_8.1p1, LibreSSL 2.7.3
 > debug1: Reading configuration data /Users/YOU/.ssh/config
 > debug1: Reading configuration data /etc/ssh/ssh_config
 > debug1: /etc/ssh/ssh_config line 47: Applying options for *
-> debug1: Connecting to {% data variables.command_line.codeblock %} port 22.
+> debug1: Connecting to {% data variables.product.product_url %} port 22.
 ```
 
 The connection should be made on port 22{% ifversion fpt or ghec %}, unless you're overriding settings to use [SSH over HTTPS](/authentication/troubleshooting-ssh/using-ssh-over-the-https-port){% endif %}.
@@ -44,8 +49,8 @@ The connection should be made on port 22{% ifversion fpt or ghec %}, unless you'
 
 All connections, including those for remote URLs, must be made as the "git" user. If you try to connect with your {% data variables.product.product_name %} username, it will fail:
 
-```shell replacedomain
-$ ssh -T GITHUB-USERNAME@{% data variables.command_line.codeblock %}
+```shell
+$ ssh -T GITHUB-USERNAME@{% data variables.product.product_url %}
 > Permission denied (publickey).
 ```
 
@@ -53,8 +58,8 @@ If your connection failed and you're using a remote URL with your {% data variab
 
 You should verify your connection by typing:
 
-```shell replacedomain copy
-ssh -T git@{% data variables.command_line.codeblock %}
+```shell copy
+ssh -T git@{% data variables.product.product_url %}
 ```
 
 You should see this output:
@@ -114,18 +119,15 @@ You should see this output:
 
 The `ssh-add` command _should_ print out a long string of numbers and letters. If it does not print anything, you will need to [generate a new SSH key](/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and associate it with {% data variables.product.product_name %}.
 
-{% tip %}
-
-**Tip**: On most systems the default private keys (`~/.ssh/id_rsa` and `~/.ssh/identity`) are automatically added to the SSH authentication agent. You shouldn't need to run `ssh-add path/to/key` unless you override the file name when you generate a key.
-
-{% endtip %}
+> [!TIP]
+> On most systems the default private keys (`~/.ssh/id_rsa` and `~/.ssh/identity`) are automatically added to the SSH authentication agent. You shouldn't need to run `ssh-add path/to/key` unless you override the file name when you generate a key.
 
 ### Getting more details
 
-You can also check that the key is being used by trying to connect to `git@{% data variables.command_line.backticks %}`:
+You can also check that the key is being used by trying to connect to `git@{% data variables.product.product_url %}`:
 
-```shell replacedomain copy
-ssh -vT git@{% data variables.command_line.codeblock %}
+```shell copy
+ssh -vT git@{% data variables.product.product_url %}
 ```
 
 You'll see output like this:
@@ -146,8 +148,8 @@ You'll see output like this:
 ```
 
 In this example, SSH did not find any keys.
-- "-1" at the end of the "identity file" lines means SSH couldn't find a file to use.
-- "Trying private key" lines indicate that no file was found.
+* "-1" at the end of the "identity file" lines means SSH couldn't find a file to use.
+* "Trying private key" lines indicate that no file was found.
 
 If a file existed, those lines would be "1" and "Offering public key", as in this output:
 
@@ -242,8 +244,5 @@ You must provide your public key to {% data variables.product.product_name %} to
 
 If you don't see your public key in {% data variables.product.product_name %}, you'll need to [add your SSH key to {% data variables.product.product_name %}](/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) to associate it with your computer.
 
-{% warning %}
-
-**Warning**: If you see an SSH key you're not familiar with on {% data variables.product.product_name %}, delete it immediately and contact {% data variables.contact.contact_support %} for further help. An unidentified public key may indicate a possible security concern. For more information, see "[AUTOTITLE](/authentication/keeping-your-account-and-data-secure/reviewing-your-ssh-keys)."
-
-{% endwarning %}
+> [!WARNING]
+> If you see an SSH key you're not familiar with on {% data variables.product.product_name %}, delete it immediately and contact {% data variables.contact.contact_support %} for further help. An unidentified public key may indicate a possible security concern. For more information, see [AUTOTITLE](/authentication/keeping-your-account-and-data-secure/reviewing-your-ssh-keys).

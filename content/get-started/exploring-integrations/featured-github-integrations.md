@@ -22,11 +22,10 @@ shortTitle: Featured integrations
 You can connect to {% data variables.product.product_name %} repositories within third-party editor tools such as {% data variables.product.prodname_vs %}.
 
 {% ifversion fpt %}
-{% note %}
 
-**Note:** To see an example of how third-party editor tools connect to repositories for {% data variables.product.prodname_classroom %}, see "[AUTOTITLE](/education/manage-coursework-with-github-classroom/integrate-github-classroom-with-an-ide/integrate-github-classroom-with-an-ide)."
+> [!NOTE]
+> To see an example of how third-party editor tools connect to repositories for {% data variables.product.prodname_classroom %}, see [AUTOTITLE](/education/manage-coursework-with-github-classroom/integrate-github-classroom-with-an-ide/integrate-github-classroom-with-an-ide).
 
-{% endnote %}
 {% endif %}
 
 ### {% data variables.product.product_name %} for {% data variables.product.prodname_vs %}
@@ -57,13 +56,13 @@ You can integrate your {% ifversion fpt or ghec %}personal{% elsif ghes %}user{%
 
 The Slack + {% data variables.product.prodname_dotcom %} app lets you subscribe to your repositories or organizations and get real-time updates about activity for the following features on {% data variables.location.product_location %}.
 
-- Issues
-- Pull requests
-- Commits
-- Discussions
-- Releases
-- {% data variables.product.prodname_actions %}
-- Deployments
+* Issues
+* Pull requests
+* Commits
+* Discussions
+* Releases
+* {% data variables.product.prodname_actions %}
+* Deployments
 
 You can also open and close issues, comment on your issues and pull requests, approve deployments, and see detailed references to issues and pull requests without leaving Slack. The app will also ping you personally on Slack if you are mentioned as part of any {% data variables.product.prodname_dotcom %} notifications that you receive in your channels or personal chats.
 
@@ -73,13 +72,13 @@ The Slack + {% data variables.product.prodname_dotcom %} app is also compatible 
 
 The {% data variables.product.prodname_dotcom %} for Teams app lets you subscribe to your repositories or organizations and get real-time updates about activity for the following features on {% data variables.location.product_location %}.
 
-- Issues
-- Pull requests
-- Commits
-- Discussions
-- Releases
-- {% data variables.product.prodname_actions %}
-- Deployments
+* Issues
+* Pull requests
+* Commits
+* Discussions
+* Releases
+* {% data variables.product.prodname_actions %}
+* Deployments
 
 You can also open and close issues, comment on your issues and pull requests, approve deployments, and see detailed references to issues and pull requests without leaving Microsoft Teams. The app will also ping you personally on Teams if you are mentioned as part of any {% data variables.product.prodname_dotcom %} notifications that you receive in your channels or personal chats.
 

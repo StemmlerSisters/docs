@@ -20,8 +20,5 @@ children:
   - /keeping-your-actions-up-to-date-with-dependabot
   - /configuring-access-to-private-registries-for-dependabot
   - /guidance-for-the-configuration-of-private-registries-for-dependabot
-  - /removing-dependabot-access-to-public-registries
-  - /viewing-dependabot-job-logs
-  - /troubleshooting-the-detection-of-vulnerable-dependencies
-  - /troubleshooting-dependabot-errors
+  - /dependabot-options-reference
 ---
