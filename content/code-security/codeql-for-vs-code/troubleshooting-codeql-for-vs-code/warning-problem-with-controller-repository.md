@@ -9,9 +9,9 @@ topics:
 type: reference
 intro: 'If you see this warning, update your controller repository to a private repository.'
 allowTitleToDifferFromFilename: true
+redirect_from:
+  - /code-security/codeql-for-vs-code/troubleshooting-variant-analysis
 ---
-
-{% data reusables.code-scanning.mrva-beta %}
 
 ## About this warning
 
@@ -27,4 +27,4 @@ When you run variant analysis, you'll see any errors and warnings displayed in t
 
 ## Fixing the problem
 
-To analyze private repositories, you should edit your settings to update your controller repository to a private repository. For information on how to edit the controller repository, see "[AUTOTITLE](/code-security/codeql-for-vs-code/using-the-advanced-functionality-of-the-codeql-for-vs-code-extension/customizing-settings#configuring-settings-for-variant-analysis)."
+To analyze private repositories, you should edit your settings to update your controller repository to a private repository. For information on how to edit the controller repository, see [AUTOTITLE](/code-security/codeql-for-vs-code/using-the-advanced-functionality-of-the-codeql-for-vs-code-extension/customizing-settings#configuring-settings-for-variant-analysis).

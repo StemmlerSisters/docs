@@ -2,8 +2,8 @@ You can specify multiple variables to create a multi-dimensional matrix. A job w
 
 For example, the following workflow specifies two variables:
 
-- Two operating systems specified in the `os` variable
-- Three Node.js versions specified in the `version` variable
+* Two operating systems specified in the `os` variable
+* Three Node.js versions specified in the `version` variable
 
 The workflow will run six jobs, one for each combination of the `os` and `version` variables. Each job will set the `runs-on` value to the current `os` value and will pass the current `version` value to the `actions/setup-node` action.
 
@@ -30,7 +30,7 @@ matrix:
     - macos-latest
   node:
     - version: 14
-    - version: {% ifversion actions-node20-support %}20{% else %}16{% endif %}
+    - version: 20
       env: NODE_OPTIONS=--openssl-legacy-provider
 ```
 
@@ -40,11 +40,11 @@ This matrix produces 4 jobs with corresponding contexts.
 - matrix.os: ubuntu-latest
   matrix.node.version: 14
 - matrix.os: ubuntu-latest
-  matrix.node.version: {% ifversion actions-node20-support %}20{% else %}16{% endif %}
+  matrix.node.version: 20
   matrix.node.env: NODE_OPTIONS=--openssl-legacy-provider
 - matrix.os: macos-latest
   matrix.node.version: 14
 - matrix.os: macos-latest
-  matrix.node.version: {% ifversion actions-node20-support %}20{% else %}16{% endif %}
+  matrix.node.version: 20
   matrix.node.env: NODE_OPTIONS=--openssl-legacy-provider
 ```
